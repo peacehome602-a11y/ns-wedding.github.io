@@ -402,6 +402,14 @@ a { color: inherit; }
 .venue-block h3 { margin: 0 0 8px; color: var(--gold-bright); font: 500 clamp(26px, 4vw, 34px)/1.05 var(--display); }
 .venue-block p { margin: 0 auto 16px; max-width: 320px; color: var(--mist); font-size: 13px; line-height: 1.6; }
 .venue-divider { flex: 0 0 1px; align-self: stretch; background: rgba(212,178,104,.25); min-height: 90px; }
+.couple-details-section { background: linear-gradient(165deg, #0a0d17, #131828 55%, #090c14); }
+.couple-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(36px, 7vw, 80px); margin-top: 8px; }
+.couple-block { flex: 1 1 260px; max-width: 430px; text-align: center; }
+.couple-block .couple-label { margin: 0 0 14px; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }
+.couple-block h3 { margin: 0 0 10px; color: var(--gold-bright); font: 500 clamp(24px, 3.2vw, 30px)/1.15 var(--display); white-space: nowrap; }
+.couple-block .couple-parentage { margin: 0 0 14px; color: var(--mist); font-size: 13px; line-height: 1.7; }
+.couple-block .couple-compliments { margin: 0; color: var(--gold); font: italic 500 13px/1.6 var(--display); letter-spacing: .01em; }
+.couple-divider { flex: 0 0 1px; align-self: stretch; background: rgba(212,178,104,.25); min-height: 130px; }
 .outline-button { color: var(--gold-bright); background: rgba(6,9,15,.35); }
 .outline-button:hover { background: var(--gold); color: var(--night); transform: translateY(-2px); }
 .outline-button[hidden] { display: none; }
@@ -478,6 +486,7 @@ textarea { min-height: 73px; resize: vertical; }
 @media (max-width: 700px) {
   .hero { min-height: 100svh; }
   .venue-divider { display: none; }
+  .couple-divider { display: none; }
   .hero-portrait { top: 13%; right: -24vw; width: 105vw; height: 61svh; }
   .hero-content { padding-bottom: 12px; }
   .photo-quote-grid { grid-template-columns: 1fr; gap: 43px; }
@@ -587,6 +596,30 @@ textarea { min-height: 73px; resize: vertical; }
 </div>
 </header>
 <main>
+<section class="section couple-details-section" id="couple-details" aria-labelledby="coupleDetailsTitle">
+<div class="section-inner">
+<div class="section-heading reveal">
+<p class="eyebrow">With honour we present</p>
+<h2 id="coupleDetailsTitle">The Bride &amp; Groom</h2>
+<div class="ornament" aria-hidden="true"><span>❦</span></div>
+</div>
+<div class="couple-grid reveal-scale">
+<div class="couple-block">
+<p class="couple-label">The Groom</p>
+<h3>Dr. Muhammed Nabeel NV</h3>
+<p class="couple-parentage">S/o Najeeb VK &amp; Shaheena KK</p>
+<p class="couple-compliments">With compliments from Saeed &amp; Suhail</p>
+</div>
+<div class="couple-divider" aria-hidden="true"></div>
+<div class="couple-block">
+<p class="couple-label">The Bride</p>
+<h3>Dr. Sulaikha Beevi MH</h3>
+<p class="couple-parentage">D/o Assainar MM &amp; Laila PM</p>
+<p class="couple-compliments">With compliments from Sumayya, Abins &amp; Arzan</p>
+</div>
+</div>
+</div>
+</section>
 <section class="section photo-quote-section" id="our-story" aria-labelledby="reflectionsTitle">
 <span class="corner-flourish corner-flourish--tl" aria-hidden="true"></span>
 <div class="section-inner">
