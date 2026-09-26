@@ -1,0 +1,180 @@
+Here is the raw HTML file content. You can copy the code below and save it locally on your device with a `.html` extension (for example, `invitation.html`) to open it in any web browser.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#07090f" />
+<meta name="description" content="A private wedding invitation." />
+<title>Nabeel &amp; Sulaikha — Wedding Reception</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --night: #07090f;
+  --night-soft: #0d1220;
+  --surface: #101724;
+  --surface-light: #172032;
+  --gold: #d4b268;
+  --gold-bright: #f1d998;
+  --gold-dim: #9c7b3f;
+  --ivory: #f8f3e8;
+  --mist: #c9c1ae;
+  --line: rgba(212, 178, 104, .38);
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body: "DM Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { 
+  scroll-behavior: smooth; 
+  background: var(--night); 
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--night);
+  color: var(--ivory);
+  font-family: var(--body);
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+body.is-locked { overflow: hidden; }
+button, input, textarea { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Couple Picture Container */
+.couple-picture-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.couple-picture {
+  max-width: 85%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transform: translate3d(15px, 0, 0);
+  will-change: transform;
+}
+
+/* Opening scene: starry sky, moon, ribbon + wax seal, then the Bismillah reveal */
+.opening {
+  position: fixed; z-index: 100; inset: 0; overflow: hidden;
+  background: linear-gradient(180deg, #060a14 0%, #0a1024 45%, #05070c 100%);
+  transition: opacity 1.4s cubic-bezier(.4,.05,.2,1), visibility 0s linear 1.4s;
+}
+.opening.is-open { opacity: 0; }
+.opening::before {
+  content: ""; position: absolute; inset: 14px; border: 1px solid var(--line);
+  pointer-events: none; z-index: 4;
+}
+.opening::after {
+  content: ""; position: absolute; inset: 21px; border: 1px solid rgba(212,178,104,.16);
+  pointer-events: none; z-index: 4;
+}
+.opening-corner { position: absolute; z-index: 4; color: rgba(241,217,152,.6); font-size: 12px; pointer-events: none; }
+.opening-corner--tl { top: 30px; left: 30px; }
+.opening-corner--tr { top: 30px; right: 30px; }
+.opening-corner--bl { bottom: 30px; left: 30px; }
+.opening-corner--br { bottom: 30px; right: 30px; }
+.star-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.star-field span { position: absolute; inset: 0; }
+
+.stars-small {
+  background-image:
+    radial-gradient(1.4px 1.4px at 165px 154px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 202px 666px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 24px 74px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 420px 548px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 48px 374px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 298px 59px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 259px 219px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 19px 88px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 222px 428px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 35px 246px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 46px 564px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 217px 60px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 289px 126px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 114px 645px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 321px 596px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 31px 590px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 299px 406px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 25px 226px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 23px 570px, #fff, transparent 60%),
+    radial-gradient(1.4px 1.4px at 68px 296px, #fff, transparent 60%);
+  opacity: 0.6;
+}
+.stars-mid {
+  background-image:
+    radial-gradient(2.2px 2.2px at 11px 472px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 181px 172px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 312px 119px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 252px 60px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 111px 786px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 147px 132px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 378px 253px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 203px 400px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 254px 82px, #fff, transparent 60%),
+    radial-gradient(2.2px 2.2px at 85px 459px, #fff, transparent 60%);
+  opacity: 0.5;
+}
+.stars-glow {
+  background-image:
+    radial-gradient(3px 3px at 90px 160px, #f6e6b8, transparent 65%),
+    radial-gradient(3px 3px at 330px 230px, #f6e6b8, transparent 65%),
+    radial-gradient(3px 3px at 150px 620px, #f6e6b8, transparent 65%);
+  opacity: 0.5;
+}
+
+/* Timeline Layout Optimization */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Android / Mobile Optimizations */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  .couple-picture {
+    max-width: 90%;
+    transform: translate3d(10px, 0, 0);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="opening">
+  <div class="opening-corner opening-corner--tl">✦</div>
+  <div class="opening-corner opening-corner--tr">✦</div>
+  <div class="opening-corner opening-corner--bl">✦</div>
+  <div class="opening-corner opening-corner--br">✦</div>
+  <div class="star-field">
+    <span class="stars-small"></span>
+    <span class="stars-mid"></span>
+    <span class="stars-glow"></span>
+  </div>
+</div>
+
+<!-- Couple Picture Section with shift right and no ripples/effects -->
+<div class="couple-picture-container">
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCATmBOYDASIAAhEBAxEB/8QAHQAAAAcBAQEAAAAAAAAAAAAAAAECAwQFBgcICf/EAFIQAAEDAwMCBAQEAwYDBgMBEQECAwQABREGEiEHMRMiQVEIFGFxFTKBkSNCoRYzUrHB0SRi4QkXQ3KC8CU0U5LxY6ImNURzgxhUstisiertenpQ/3EACQEBAQEBAQEBAQAAAAAAAAAAAAMCAQQABQYHC//eAEgRAAEEAAQCBQgGCgIBAwUBAAABAgMRBCEAMVESQVEFEyJhcXIGIzKBscEUk6Gy0eEGFSNCU2KCkrEzctI1NkV34kSDoqPC/9oADmaxindex.html?p=1)
+
+```
